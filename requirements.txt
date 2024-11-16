@@ -9,3 +9,5 @@ openai
 pillow
 pdfminer.six
 pypdfium2
+tiktoken
+torch
