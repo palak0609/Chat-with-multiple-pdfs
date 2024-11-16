@@ -9,11 +9,13 @@ from langchain.prompts import PromptTemplate
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 import os
+import openai
 import pickle
 
 # Load API keys
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+#openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # Helper function to load/save cached data
 def save_cache(data, file_name):
