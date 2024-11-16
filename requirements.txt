@@ -1,15 +1,10 @@
 streamlit
-google-generativeai
-python-dotenv
-langchain
-PyPDF2
-chromadb
-faiss-cpu
-langchain_google_genai
 pdfplumber
-pdfminer.six
-Pillow
-pypdfium2
-sentence_transformers
-pickle
+langchain
+sentence-transformers
+faiss-cpu
+python-dotenv
 openai
+pillow  # Required by pdfplumber
+pdfminer.six  # Required by pdfplumber
+pypdfium2  # Required by pdfplumber
