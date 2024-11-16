@@ -1,10 +1,11 @@
 streamlit
 pdfplumber
 langchain
+langchain-community
 sentence-transformers
 faiss-cpu
 python-dotenv
 openai
-pillow  # Required by pdfplumber
-pdfminer.six  # Required by pdfplumber
-pypdfium2  # Required by pdfplumber
+pillow
+pdfminer.six
+pypdfium2
