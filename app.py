@@ -16,6 +16,7 @@ import pickle
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
+
 # Helper function to load/save cached data
 def save_cache(data, file_name):
     with open(file_name, "wb") as f:
@@ -80,11 +81,12 @@ def get_conversational_chain():
 
 def user_input(user_question):
     embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
-    vector_store = FAISS.load_local("faiss_index", embeddings)
+    vector_store = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
     docs = vector_store.similarity_search(user_question)
     chain = get_conversational_chain()
     response = chain({"input_documents": docs, "question": user_question}, return_only_outputs=True)
     st.write("Reply:", response["output_text"])
+
 
 def main():
     st.set_page_config(page_title="Chat PDF", layout="wide")
